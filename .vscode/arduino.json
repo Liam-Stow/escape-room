@@ -1,0 +1,5 @@
+{
+    "port": "COM1",
+    "board": "arduino:avr:uno",
+    "sketch": "shaky-door-blanked-window\\shaky-door-blanked-window.ino"
+}
