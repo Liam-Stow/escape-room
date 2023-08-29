@@ -1,8 +1,8 @@
 constexpr int BUTTON_PIN = 2;
-constexpr int SCREEN_RELAY_PIN = 13;
+constexpr int SCREEN_RELAY_PIN = 3;
 constexpr int DOOR_SHAKER_REPLAY_PIN = 4;
-constexpr int PLAY_SOUND_1_PIN = 6;
-constexpr int PLAY_SOUND_2_PIN = 7;
+constexpr int PLAY_SOUND_1_PIN = 7;
+constexpr int PLAY_SOUND_2_PIN = 6;
 
 void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -29,6 +29,8 @@ void setup() {
   // Play sound 1
   Serial.println("Playing sound 1");
   digitalWrite(PLAY_SOUND_1_PIN, LOW);
+  delay(100);
+  digitalWrite(PLAY_SOUND_1_PIN, HIGH);
 
   // Wait 5 seconds
   Serial.println("Waiting 5 seconds");
@@ -41,6 +43,8 @@ void setup() {
   // Play sound 2
   Serial.println("Playing sound 2");
   digitalWrite(PLAY_SOUND_2_PIN, LOW);
+  delay(100);
+  digitalWrite(PLAY_SOUND_2_PIN, HIGH);
 
   // Wait 3 seconds
   Serial.println("Waiting 3 seconds");
