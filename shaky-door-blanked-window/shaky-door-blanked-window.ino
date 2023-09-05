@@ -15,6 +15,7 @@ void setup() {
 }
 
 void loop() {
+  // Set outputs to default state
   digitalWrite(SCREEN_RELAY_PIN, LOW);
   digitalWrite(DOOR_SHAKER_REPLAY_PIN, LOW);
   digitalWrite(PLAY_SOUND_1_PIN, HIGH); // sounds play when pin is set to LOW. Set to HIGH to begin with so nothing plays.
