@@ -11,20 +11,19 @@ void setup() {
   pinMode(PLAY_SOUND_1_PIN, OUTPUT);
   pinMode(PLAY_SOUND_2_PIN, OUTPUT);
 
+	Serial.begin(115200);
+}
+
+void loop() {
   digitalWrite(SCREEN_RELAY_PIN, LOW);
   digitalWrite(DOOR_SHAKER_REPLAY_PIN, LOW);
   digitalWrite(PLAY_SOUND_1_PIN, HIGH); // sounds play when pin is set to LOW. Set to HIGH to begin with so nothing plays.
   digitalWrite(PLAY_SOUND_2_PIN, HIGH);
-	Serial.begin(115200);
 
   // Wait for button press
   Serial.println("Waiting for button press");
   while (digitalRead(BUTTON_PIN) == LOW) {}
   Serial.println("Detected button press");
-
-  // Wait 3 seconds
-  Serial.println("Waiting 3 seconds");
-  delay(3000);
 
   // Play sound 1
   Serial.println("Playing sound 1");
@@ -32,9 +31,9 @@ void setup() {
   delay(100);
   digitalWrite(PLAY_SOUND_1_PIN, HIGH);
 
-  // Wait 5 seconds
-  Serial.println("Waiting 5 seconds");
-  delay(5000);
+  // Wait 10 seconds
+  Serial.println("Waiting 10 seconds");
+  delay(10000);
 
   // Drop screen
   Serial.println("Dropping screen");
@@ -46,9 +45,9 @@ void setup() {
   delay(100);
   digitalWrite(PLAY_SOUND_2_PIN, HIGH);
 
-  // Wait 3 seconds
-  Serial.println("Waiting 3 seconds");
-  delay(3000);
+  // Wait 7 seconds
+  Serial.println("Waiting 7 seconds");
+  delay(7000);
 
   // Start door shake
   Serial.println("Starting door shake");
@@ -62,7 +61,8 @@ void setup() {
   Serial.println("Stopping door shake");
   digitalWrite(DOOR_SHAKER_REPLAY_PIN, LOW);
 
-  Serial.println("--- Sequence Finished ---");
+  // Restart
+  Serial.println("Sequence Finished, waiting 2 minutes");
+  delay(120000);
+  Serial.println("--- Restarting ---");
 }
-
-void loop() {}
