@@ -3,6 +3,8 @@ constexpr int SCREEN_RELAY_PIN = 3;
 constexpr int DOOR_SHAKER_REPLAY_PIN = 4;
 constexpr int PLAY_SOUND_1_PIN = 7;
 constexpr int PLAY_SOUND_2_PIN = 6;
+constexpr int SHAKE_ONCE_DURATION = 100; // Decrease to shake faster
+constexpr int NUMBER_OF_SHAKES = 50;
 
 void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -52,15 +54,12 @@ void loop() {
 
   // Start door shake
   Serial.println("Starting door shake");
-  digitalWrite(DOOR_SHAKER_REPLAY_PIN, HIGH);
-
-  // Wait 5 seoncds
-  Serial.println("Waiting 5 seconds");
-  delay(5000);
-
-  // End door shake
-  Serial.println("Stopping door shake");
-  digitalWrite(DOOR_SHAKER_REPLAY_PIN, LOW);
+  for(int i=0; i<NUMBER_OF_SHAKES; i++) {
+    digitalWrite(DOOR_SHAKER_REPLAY_PIN, HIGH);
+    delay(SHAKE_ONCE_DURATION);
+    digitalWrite(DOOR_SHAKER_REPLAY_PIN, LOW);
+    delay(SHAKE_ONCE_DURATION);
+  }
 
   // Restart
   Serial.println("Sequence Finished, waiting 2 minutes");
