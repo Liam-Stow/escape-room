@@ -1,3 +1,8 @@
+// Requires DIP Switches to be in 'I/O Independent Mode 1':
+// Switch 1 = ON
+// Switch 2 = ON
+// Switch 3 = OFF
+
 constexpr int SWITCH_PIN = 13;
 constexpr int LED_RELAY_PIN = 3;
 constexpr int PLAY_SOUND_PIN = 4;
