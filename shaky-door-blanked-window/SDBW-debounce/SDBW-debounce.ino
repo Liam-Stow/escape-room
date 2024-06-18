@@ -29,6 +29,7 @@ void loop() {
   }
 
   if (buttonReadCounter > 10) {
+    buttonReadCounter = 0;
     RunScareSequence();
   }
 
