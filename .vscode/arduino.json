@@ -1,5 +1,0 @@
-{
-    "port": "COM5",
-    "board": "arduino:avr:uno",
-    "sketch": "radio\\radio_code_no_repeat_2024.06.07\\radio_code_no_repeat_2024.06.07.ino"
-}
